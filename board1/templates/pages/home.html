@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+  <h2>
+    {% block title %}Home{% endblock title %}
+  </h2>
+{% endblock header %}
+
+{% block content %}
+    <p><a href="{{ url_for('pages.signup') }}">Sign in</a></p>
+    <p><a href="{{ url_for('pages.login') }}">Log in</a></p>
+
+{% endblock content %}
+<p>
+    
+</p>

@@ -1,0 +1,39 @@
+/*for the body*/
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background-image: url(background.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover ;
+}
+
+footer {
+  text-align: center; /* Center the navigation bar horizontally */
+  margin-top: 20px; /* Add spacing above the footer */
+}
+
+nav ul {
+  display: flex; /* Arrange links side-by-side */
+  justify-content: center; /* Center links within the navigation bar */
+}
+
+/*for the links*/
+a:visited {
+  color: rgb(10, 147, 231);
+}
+
+/*for hovering over the links*/
+a:hover {
+  color: #0056b3;
+}
+
+/*navigator style*/
+nav ul li {
+  display: inline;
+  margin: 0 20px; /* Reduce margin for the navigation links */
+}
+
+
