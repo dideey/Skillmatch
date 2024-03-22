@@ -10,7 +10,16 @@ body {
   background-size: cover ;
 }
 
+.navbar-menu {
+  display: flex;
+  justify-content: flex-end;
+}
 
+.navbar-item {
+  margin-right: 40px;
+  color: white;
+  text-decoration: none;
+}
 
 /*for the links*/
 a:visited {

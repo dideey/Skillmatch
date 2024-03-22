@@ -13,12 +13,16 @@
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="confirm Password">Confirm password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
 
         <label for="phone_number">Phone Number:</label>
         <input type="tel" id="phone_number" name="phone_number" required><br><br>
 
         <input type="submit" value="Sign Up">
     </form>
+
     <script src="{{ url_for('static', filename='validation.js') }}"></script>
     <script>
         document.getElementById("signupForm").addEventListener("submit", function(event) {

@@ -1,19 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <title> {% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
+
 <body>
-<h1>Welcome to Skillmatch</h1>
-{% include("_navigation.html") %}
-<section>
-  <header>
-    {% block header %}{% endblock header %}
-  </header>
-  <main>
-    {% block content %}<p>No messages.</p>{% endblock content %}
-  <main>
-</section>
+    <section class="hero is-primary is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                          <a href="{{ url_for('pages.home') }}" class="navbar-item">
+                            Home
+                        </a>
+                          <a href="{{ url_for('pages.about') }}" class="navbar-item">
+                            About
+                        </a>
+                            <a href="{{ url_for('pages.signup') }}" class="navbar-item">
+                                Sign Up
+                            </a>
+                            <a href="{{ url_for('pages.login') }}" class="navbar-item">
+                              Login
+                          </a>
+                            <a href="{{ url_for('pages.logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>

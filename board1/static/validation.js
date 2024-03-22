@@ -3,6 +3,7 @@ function validateForm() {
     var lastName = document.getElementById("last_name").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
     var phoneNumber = document.getElementById("phone_number").value;
 
     // Check if any field is empty
@@ -15,6 +16,18 @@ function validateForm() {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert("Please enter a valid email address");
+        return false;
+    }
+
+    // Check password complexity
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters long");
+        return false;
+    }
+
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
         return false;
     }
 
