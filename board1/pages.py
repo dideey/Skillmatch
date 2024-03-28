@@ -1,8 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from board1.models import User
-
-from . import db
+from board1 import db
 
 bp = Blueprint("pages", __name__)
 
@@ -34,10 +33,11 @@ def signup_post():
 
     #values to add to the db
     email = request.form.get('email')
-    firstname = request.form.get('firstname')
-    lastname = request.form.get('lastname')
+    firstname = request.form.get('first_name')
+    lastname = request.form.get('last_name')
     password = request.form.get('password')
 
+    
     #check if user already exists
     user = User.query.filter_by(email=email).first()
 
@@ -45,20 +45,15 @@ def signup_post():
     if user:
         flash("Email address already exists", category='error')
         return redirect(url_for('pages.signup'))
-    
-     # Validate form fields
-    if not email or not firstname or not lastname or not password:
-        flash("Please fill out all fields", category='error')
-        return redirect(url_for('pages.signup'))
 
-    
     #create new user
     new_user = User(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password))
-
+    
     #add new user to the db
     db.session.add(new_user)
     db.session.commit()
 
+    
     return redirect(url_for('pages.login'))
 
 @bp.route('/login')
