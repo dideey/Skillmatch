@@ -53,15 +53,38 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
 
-    
-    return redirect(url_for('pages.login'))
 
-@bp.route('/login')
-def login():
+    return redirect(url_for('pages.dashboard'))
+
+
+@bp.route('/signin', methods=['GET', 'POST'])
+def signin():
     """Website login page route"""
-    return render_template('pages/login.html')
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        # Check if user exists
+        user = User.query.filter_by(email=email).first()
+        if not user:
+            flash("Incorrect email or password", category='error')
+            return redirect(url_for('pages.signin'))
+
+        # Validate password
+        if not check_password_hash(user.password, password):
+            flash("Incorrect email or password", category='error')
+            return redirect(url_for('pages.signin'))
+
+        # Login successful - Redirect to dashboard
+        return redirect(url_for('pages.dashboard'))
+    
+    return render_template('pages/dashboard.html')
 
 @bp.route('/logout')
 def logout():
     """Website logout page route"""
     return render_template('pages/logout.html')
+
+@bp.route('/dashboard')
+def  dashboard():
+    return render_template('pages/dashboard.html')
