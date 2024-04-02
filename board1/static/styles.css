@@ -1,7 +1,7 @@
 /*for the body*/
 body {
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 100;
   text-align: center;
   background-image: url(background.jpeg);
   background-repeat: no-repeat;
@@ -36,5 +36,4 @@ nav ul li {
   display: inline;
   margin: 0 50px; /* Reduce margin for the navigation links */
 }
-
 
