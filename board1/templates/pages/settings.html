@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillMatch Settings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='DashBoard.css') }}" />
+</head>
+<body>
+  <div class="banner">
+    <div class="nav">
+      <ul>
+        <li><a href="base.html">Home</a></li>
+        <li><a href="Profile.html">Profile</a></li>
+        <li><a href="Jobs.html">Jobs</a></li>
+        <li><a href="Notifications.html">Notifications</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Settings</h2>
+    <p>This is where you can manage your account settings.</p>
+    <form action="/update_settings" method="POST">
+      <div class="setting-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email">
+      </div>
+      <div class="setting-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+      </div>
+      <div class="setting-group">
+        <label for="notifications">Notifications:</label>
+        <input type="checkbox" id="notifications" name="notifications">
+          <span>Receive email notifications</span>
+      </div>
+      <button type="submit">Update Settings</button>
+    </form>
+  </div>
+</body>
+</html>

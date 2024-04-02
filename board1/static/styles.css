@@ -1,0 +1,65 @@
+/*for the body*/
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background-image: url(background.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover ;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-item {
+  margin-right: 40px;
+  color: white;
+  text-decoration: none;
+}
+
+/*for the links*/
+a:visited {
+  color: rgb(10, 147, 231);
+}
+
+/*for hovering over the links*/
+a:hover {
+  color: #0056b3;
+}
+
+/*navigator style*/
+nav ul li {
+  display: inline;
+  margin: 0 50px; /* Reduce margin for the navigation links */
+}
+
+
+.search-bar {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* Adjust as needed */
+  height: 100vh;
+  background-color: #f0f0f0; /* Adjust as needed */
+  padding: 20px;
+}
+
+.profile-button,
+.notifications-button {
+  /* Add button styling here */
+}
+
+.main-content {
+  margin-left: 220px; /* Adjust as needed */
+}
