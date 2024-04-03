@@ -26,6 +26,7 @@ def create_app():
 
     from board1 import pages
     app.register_blueprint(pages.bp)
+
     
     # Create the database tables
     with app.app_context():

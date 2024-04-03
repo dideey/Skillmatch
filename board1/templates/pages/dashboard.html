@@ -10,13 +10,24 @@
 <body>
     <div class="banner">    
     <div class="nav">
-        <ul>
-            <li><a href="base.html">Home</a></li>
-            <li><a href="Profile.html">Profile</a></li>
-            <li><a href="Jobs.html">Jobs</a></li>
-            <li><a href="Notifications.html">Notifications</a></li>
-            <li><a href="Settings.html">Settings</a></li>
-        </ul>        
+        <a href="{{ url_for('pages.home') }}" class="navbar-item">
+            Home
+        </a>
+          <a href="{{ url_for('pages.profile') }}" class="navbar-item">
+            Profile
+        </a>
+            <a href="{{ url_for('pages.jobs') }}" class="navbar-item">
+                Jobs
+            </a>
+            <a href="{{ url_for('pages.notifications') }}" class="navbar-item">
+              Notifications
+          </a>
+            <a href="{{ url_for('pages.settings') }}" class="navbar-item">
+                Settings
+            </a>
+            <a href="{{ url_for('pages.logout') }}" class="navbar-item">
+                Logout
+            </a>
     </div>
     
     <div class="content">
