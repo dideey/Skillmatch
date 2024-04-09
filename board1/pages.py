@@ -61,10 +61,12 @@ def profile():
 
     # Get the user ID from the session
     user_id = session['user_id']
+    
 
     # Check if the user already has a profile
     existing_profile = Profile.query.filter_by(user_id=user_id).first()
-
+    
+    print(existing_profile)
     if request.method == "POST":
         current_job_title = request.form.get("current_job_title")
         desired_job = request.form.get("desired_job")
@@ -104,6 +106,7 @@ def profile():
             # Create a new profile
             
             new_profile = Profile(
+                user_id=user_id,
                 current_job_title=current_job_title,
                 desired_job=desired_job,
                 work_experience=work_experience,
